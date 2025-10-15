@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030213">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg">
+  
+  <!-- Primary Meta Tags -->
+  <title>NAJ's ChemCode - Interactive Chemistry Education</title>
+  <meta name="title" content="NAJ's ChemCode - Interactive Chemistry Education">
+  <meta name="description" content="Interactive Chemistry Education Platform with multilingual support (English, Hindi, Marathi), periodic table explorer, 3D molecular visualizations, and chemical reaction builder. Created by Nandini Jaiswal.">
+  <meta name="keywords" content="chemistry, education, periodic table, chemical reactions, science, learning, Nandini Jaiswal, ChemCode">
+  <meta name="author" content="Nandini Jaiswal">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://najchemcode.com/">
+  <meta property="og:title" content="NAJ's ChemCode - Interactive Chemistry Education">
+  <meta property="og:description" content="Interactive Chemistry Education Platform with multilingual support, periodic table explorer, 3D molecular visualizations, and chemical reaction builder. Created by Nandini Jaiswal.">
+  <meta property="og:image" content="/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://najchemcode.com/">
+  <meta property="twitter:title" content="NAJ's ChemCode - Interactive Chemistry Education">
+  <meta property="twitter:description" content="Interactive Chemistry Education Platform with multilingual support, periodic table explorer, 3D molecular visualizations, and chemical reaction builder. Created by Nandini Jaiswal.">
+  <meta property="twitter:image" content="/og-image.png">
+  
+  <!-- PWA Meta Tags -->
+  <meta name="application-name" content="NAJ's ChemCode">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="NAJ's ChemCode">
+  <meta name="mobile-web-app-capable" content="yes">
+  
+  <!-- Manifest -->
+  <link rel="manifest" href="/public/manifest.json">
+  
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+      <h1>NAJ's ChemCode</h1>
+      <p>JavaScript is required to run this application.</p>
+      <p style="margin-top: 20px; color: #666;">Created by Nandini Jaiswal</p>
+    </div>
+  </noscript>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered successfully:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+  <script type="module" src="/main.tsx"></script>
+</body>
+</html>
